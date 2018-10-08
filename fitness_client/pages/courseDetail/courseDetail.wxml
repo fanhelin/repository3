@@ -1,0 +1,40 @@
+<!--pages/courseDetail/courseDetail.wxml-->
+<view>
+   
+        <swiper class="swiper" indicator-dots="{{indicatorDots}}"
+            autoplay="{{autoplay}}" interval="{{interval}}"  duration="{{duration}}" >
+            <block wx:for="{{course.chapters}}" wx:key="index" >
+                <swiper-item>
+                    <image mode="scaleToFill" src="{{imageUrl}}{{course.code}}/{{item.code}}/{{item.image_name}}" />
+                </swiper-item>
+            </block>
+        </swiper>
+        <view class="title">{{course.name}}</view>
+        <view class="title">章节数：{{course.total_chapter}}</view>
+        <view class="price">￥{{course.price}}</view>
+
+  <scroll-view scroll-Y="true" scroll-X="false" style="height:300rpx"> 
+  
+        <view class="info">
+            <!--<block wx:for="{{goods.description}}" wx:key="index">-->
+            <text>{{course.describe}}</text>
+           <!-- </block>-->
+        </view>
+        
+    </scroll-view>
+
+    <view class="footer">
+      <view class="footer_box">
+        <text class="footer_num">购买数量</text> 
+        <view class="footer_select">
+            <!-- <label id="reduce" bindtap="changeBuyCount">-</label>  -->
+           <text>{{buyCount}}</text> 
+            <!-- <label id="add" bindtap="changeBuyCount">+</label>-->
+         
+         </view> 
+      </view>
+      <view class="footer_btn">
+        <text id="add" bindtap="addToCart">加入购物车</text><text bindtap="buyNow">立即购买</text>
+      </view>
+    </view>
+</view>

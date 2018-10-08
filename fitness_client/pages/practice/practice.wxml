@@ -1,0 +1,40 @@
+<view class="container">
+  <scroll-view  scroll-y="true"  class="page-body">
+  <!--list-->
+    <view class="nav_section">
+      <view wx:if="{{practiceList && practiceList.length>0}}">
+        <block wx:for="{{practiceList}}" wx:key="item.code">
+            <view class="nav_section_items" >
+                <!--image-->
+                <view class="section_image">
+                  <block wx:if="{{item.chapter_imge}}">
+                    <image src="{{imge_url+item.course_code+'/'+item.chapter_code+'/'+item.chapter_imge}}" mode="aspectFill"></image>
+                  </block>
+                <block wx:else>
+                    <image src="../../res/images/dingdan.png" mode="aspectFill"></image>
+                </block>
+                </view>
+                <!--content-->
+                <view class="section_cont">
+                    <view class="section_cont_sub">
+                        <text>{{item.course_name}}</text>
+                    </view>
+                    <view class="section_cont_price">{{item.chapter_name}}</view>
+                    <view>{{item.trucDate}}</view>
+                </view>
+                <!--book-->
+                <view class="section_clock">
+                 <block>
+                    <image style="width: 20px; height: 20px;" src="../../res/images/clock.png" mode="aspectFit"></image>
+                 </block>
+                </view>
+                <view class="section_book">
+                        <text>{{item.minute}}分钟</text>
+                </view>
+            </view>
+          </block>
+      </view>
+      <view class="wuge" wx:else>暂无数据</view>
+    </view>
+  </scroll-view>
+</view>

@@ -1,0 +1,86 @@
+<view class="container">
+   <view> 可用积分：{{score}}</view>
+ <block wx:if="{{showLoading}}">
+        <view class="loading">玩命加载中…</view>
+    </block>
+	<view class="container-body">
+
+		<view class="tab">
+			<view class="tab-nav">
+				<text wx:for="{{tabnav.tabitem}}" bindtap="setTab" class="{{showtab==item.type?'active':''}}" data-tabindex="{{item.type}}" data-type="{{item.type}}" wx:key="{{item.type}}">{{item.text}}</text>
+			</view>
+     
+    
+			<view class="tab-content">
+				<view class="tab-panel">
+        <view class="nav_section">
+          <view wx:if="{{showtabtype == 'comdList'}}">
+            <block wx:for="{{comList}}" wx:key="index">
+              <view class="nav_section_items" bindtap="goGoodsDetail" data-code="{{item.code}}"  data-index="{{index}}">
+                  <!--image-->
+                  <view class="section_image">
+                    <block wx:if="{{item.fu_img}}">
+                      <image src="{{imge_url+item.fu_img}}" mode="aspectFill"></image> 
+                    </block>
+                  <block wx:else>
+                      <image src="../../res/images/dingdan.png" mode="aspectFill"></image>
+                  </block>
+                  </view>
+                  <!--content-->
+                  <view class="section_cont">
+                      <view class="section_cont_sub">
+                          <text>{{item.name}}</text>
+                      </view>
+                       <view class="section_cont_price">{{item.title}} 价格:{{item.price}}</view>
+                       <view style="margin-top:20rpx;">库存:{{item.sum}}</view>
+                  </view>
+                  <!--book-->
+                   <view class="section_book" data-name="{{item.name}}" data-code="{{item.code}}" data-index="{{index}}" catchtap="">
+                        <text>去兑换</text>
+                  </view>
+              </view>
+            </block>
+        </view>
+      <view wx:else>
+          <block wx:for="{{hisExcList}}" wx:key="index">
+              <view class="nav_section_items" bindtap="" data-code="{{item.code}}"  data-index="{{index}}">
+                  <!--image-->
+                  <view class="section_image">
+                    <block wx:if="{{item.fu_img}}">
+                      <image src="{{imge_url+item.fu_img}}" mode="aspectFill"></image> 
+                    </block>
+                  <block wx:else>
+                      <image src="../../res/images/dingdan.png" mode="aspectFill"></image>
+                  </block>
+                  </view>
+                  <!--content-->
+                  <view class="section_cont">
+                      <view class="section_cont_sub">
+                          <text>{{item.order_date_str}}</text>
+                      </view>
+                       <view class="section_cont_price">{{item.com_title}} 价格:{{item.price}}</view>
+                       <view style="margin-top:20rpx;">消耗积分:{{item.score}}</view>
+                  </view>
+                  <!--book-->
+                   <view class="section_book" data-name="{{item.name}}" data-code="{{item.code}}" data-index="{{index}}">
+                        <text>{{item.stateStr}}</text>
+                  </view>
+              </view>
+            </block>
+      </view>
+    </view>
+				</view>
+			</view>
+      <block wx:if="{{hasMore}}">
+          <!--  <view class="loading-tip">拼命加载中…</view>-->
+        </block>
+        <block wx:else>
+            <view class="loading-tip">没有更多内容了</view>
+        </block>
+		</view>
+   
+    
+	</view>
+
+</view>
+<!--container结束-->

@@ -1,0 +1,34 @@
+<view class="main">
+  <view class="capter_title">
+  {{course.name}}
+  </view>
+  <view class="capter_sub_title">
+   章节{{chapter.sequence}}/{{chapter.name}}
+    <view class="section_share">
+        <image style="width: 25px; height: 25px;margin-bottom:10rpx;" src="../../res/images/share.png"  bindtap="dofenxiang"  mode="aspectFit">
+        </image>分享
+    </view>
+    <view class="section_share" >
+        <image style="width: 25px; height: 25px;margin-bottom:10rpx;" src="{{qiandao_img}}" mode="aspectFit"  bindtap="doQiandao">
+        </image>签到
+    </view>
+  </view>
+  <view class="capter_step">
+   <text>第{{chapter.sequence}}/{{chapter.num}}课</text>
+   <progress percent="{{chapter.percent}}" show-info />
+  </view>
+  
+  <view class="video_content">
+    <video class="video_content" id="myVideo" src="{{imageUrl}}{{course.code}}/{{chapter.code}}/{{chapter.vido_name}}" bindended="endplay" bindplay="startplay" bindpause="pauseplay" poster="{{imageUrl}}{{course.code}}/{{chapter.code}}/{{chapter.image_name}}" page-gesture controls enable-progress-gesture >
+    </video>
+  </view>
+
+  <view class="capter_des">
+  课程介绍：
+  </view>
+   <scroll-view scroll-Y="true" scroll-X="false"> 
+        <view class="dec_cont">
+            <text>{{chapter.describe}}</text>
+        </view>
+    </scroll-view>
+</view>

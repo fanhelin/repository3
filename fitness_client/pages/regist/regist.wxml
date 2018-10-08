@@ -1,0 +1,42 @@
+<!--pages/regist/regist.wxml-->
+
+<view class="list"  wx:if="{{registered == true}}">
+    <view class="item" bindtap="order">
+        <image src="../../res/images/dingdan.png"/>我的视频
+        <text class="jump">〉</text>
+    </view>
+
+    
+    <view class="item" bindtap="address">
+        <image src="../../res/images/footer-personal.png"/>积分兑换
+        <text class="jump">〉</text>
+    </view>
+
+    <view class="item" bindtap="address">
+        <image src="../../res/images/ding.png"/>我的地址
+        <text class="jump">〉</text>
+    </view>
+
+</view>
+
+<view wx:else class="list-reg">
+ 
+    <form bindsubmit="formSubmit">
+        <view class="item">
+            <label>姓名</label>
+            <input value="{{(client!= null && client != '')?client.name:''}}" name="name" placeholder="名字"/>
+        </view>
+        <view class="item">
+            <label>手机号</label>
+            <input value="{{(client!= null && client != '')?client.mobile:''}}" type="idcard" name="mobile"  bindtap='onTapMobile' placeholder="11位手机号"/>
+        </view>
+        <view class="item">
+            <label>详细地址</label>
+            <input value="{{(client!= null && client != '')?client.address:''}}" name="address" placeholder="详细地址"></input>    
+        </view>
+        <view class="item bt">
+            <button formType="submit" class="btn">{{(client!= null && client != '')?'修改':'添加'}}</button>
+        </view>
+    </form>
+
+</view>

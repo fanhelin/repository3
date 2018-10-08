@@ -1,0 +1,25 @@
+<view class="page-body">
+  <view class="page-section tc">
+    <video id="myVideo" 
+   
+    src="http://183.2.205.175/69783EB07F53571E38D6C3947/03000A04005A5817BCE47C011BA6A90BF474F1-0233-14CC-F59F-5839CCBB9400.mp4?ccode=0502&duration=394&expire=18000&psid=57b3811d2cf7f5c82fa98d375aaacf8a&sp=&ups_client_netip=def79f91&ups_ts=1532512257&ups_userid=1518852463&utid=OizfE4FnTxECAd73n5GwNlUw&vid=XMTc0MDA0MTQ3Mg%3D%3D&vkey=B85f40a580cdd6da84e89eadb3588809d&s=229b815c182311e6a080" 
+     binderror="videoErrorCallback" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls></video>
+
+    <view class="weui-cells">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">弹幕内容</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input bindblur="bindInputBlur" class="weui-input" type="text" placeholder="在此处输入弹幕内容" />
+        </view>
+      </view>
+    </view>
+    <view class="btn-area">
+      <button bindtap="bindSendDanmu" class="page-body-button" type="primary" formType="submit">发送弹幕</button>
+      <button bindtap="bindPlay" class="page-body-button" type="primary">播放</button>
+      <button bindtap="bindPause" class="page-body-button" type="primary">暂停</button>
+    </view>
+  </view>
+</view>
+

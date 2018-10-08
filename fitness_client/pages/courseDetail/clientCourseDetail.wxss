@@ -1,0 +1,119 @@
+swiper{
+    height: 420rpx;
+}
+swiper-item image{
+  width:100%;
+  height: 420rpx;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  font-family:'微软雅黑';
+} 
+/* 滚动条 */
+.page-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+/* 导航对应内容项 */
+.nav_section{
+    width:100%;
+}
+.nav_section_items{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding:20rpx;
+    border-bottom:2rpx solid #ddd;
+    position: relative;
+}
+.nav_section_items:active{
+    background:#ddd;
+}
+.nav_section_items .section_image{
+    width:170rpx;
+    height:158rpx;
+}
+.nav_section_items .section_image image{
+    width:100%;
+    height:100%;
+}
+.nav_section_items .section_cont{
+    width:360rpx;
+    font-size:26rpx;
+    color:#a9a9a9;
+    
+}
+.nav_section_items .section_cont view{
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space:nowrap;
+    display: block;
+}
+.nav_section_items .section_cont .section_cont_intro{
+    white-space:normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.nav_section_items .section_cont .section_cont_sub{
+    font-size: 30rpx;
+    line-height:60rpx;
+    color:#000;
+    margin-bottom:10rpx;
+}
+.nav_section_items .section_cont .section_cont_price{
+    font-size:32rpx;
+    color:#d24a58;
+}
+.nav_section_items .section_book{
+    width:110rpx;
+    height:60rpx;
+    font-size:30rpx;
+    border-radius:10%;
+    background:#FF0a58;
+    line-height: 60rpx;
+    color:#fff;
+    text-align: center;
+    margin-top:35rpx;
+}
+
+.nav_section_items .section_clock{
+    width:80rpx;
+    height:80rpx;
+    font-size:26rpx;
+    line-height:80rpx;
+    text-align: center;
+    margin-top:35rpx;
+}
+
+.ar_cont{
+    padding:0rpx 20rpx;
+    font-size:30rpx;
+    background: #fff;
+    margin-bottom:20rpx;
+    line-height: 40rpx;
+    color:#666666;
+}
+.ar_cont .ar_cont_h1,
+.ar_cont .ar_cont_price{
+    font-size: 32rpx;
+    font-weight: 600;
+    line-height: 40rpx;
+    color:#000;
+}
+.ar_cont .ar_cont_price{
+    color: #e64340;
+    margin-left:10rpx;
+}
+.ar_line{
+    width:100%;
+    height:1rpx;
+    content: '';
+    background: #ddd;
+    margin:20rpx 0rpx;
+}

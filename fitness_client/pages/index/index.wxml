@@ -1,0 +1,91 @@
+<!--index.wxml-->
+<view class="pageContainer">
+  <view class="header" wx:if="{{hidden!='true'}}">
+    <image wx:if="{{registered==true}}" src="{{userInfo.avatarUrl}}" animation="{{userImgAnimation}}"></image>
+    <image wx:else src="../../res/images/default_head_circle.png" animation="{{userImgAnimation}}"></image>
+    <view class="logo"> 积分：{{client.score}}</view>
+    <view class="styState flex" >
+      <view animation="{{styStateAnimation}}">
+        <text>累计签到</text>
+        <text><text id="bg-font">{{client.sign_days}}</text>天</text>
+      </view>
+      <view animation="{{styStateAnimation}}"></view>
+      <view animation="{{styStateAnimation}}">
+        <text>连续签到</text>
+        <text><text id="bg-font">{{client.con_sign_days}}</text>天</text>
+      </view>
+      <view animation="{{styStateAnimation}}"></view>
+      <view animation="{{styStateAnimation}}">
+        <text>完成练习</text>
+        <text><text id="bg-font">{{finished_hours}}</text>小时</text>
+      </view>
+      <view animation="{{styStateAnimation}}"></view>
+      <view animation="{{styStateAnimation}}">
+        <text>未练习</text>
+        <!-- <text><text id="bg-font">{{left_hours}}</text>天</text> -->
+        <text><text id="bg-font">{{left_chapters}}</text>章</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="row-list">
+
+    <view class="flex-row" data-status="picking" bindtap="findClientCourse">
+      <view class="flex-row-colum">
+        <view class="title flex-column">  
+          <image src='../../res/images/allIcon.png' style='width:30px;height:30px' />
+        </view>
+        <view class="title flex-column">全部练习</view>
+      </view>
+    </view>
+
+    <view class="flex-row" data-status="picking" bindtap="findPracticeList">
+      <view class="flex-row-colum">
+        <view class="title flex-column">
+          <image src='../../res/images/footer-list.png' style='width:30px;height:30px' />
+        </view>
+        <view class="title flex-column">历史练习</view>
+      </view>
+    </view>
+
+    <view class="flex-row" data-status="picking" bindtap=''>
+      <view class="flex-row-colum">
+        <view class="title flex-column">
+          <image src='../../res/images/footer-index.png' style='width:30px;height:30px' /> 
+        </view>
+        <view class="title flex-column">健康食谱</view>
+      </view>
+    </view>
+
+  </view>
+<view class="mycourse">
+<scroll-view scroll-Y="true" scroll-X="false">
+  <view class= "list">  
+    <view  wx:if="{{lastCourse}}"  class="item">
+      <view class="right" catchtap="">
+        <text class="h1">{{lastCourse.course_name}}</text>
+        <text class="p">{{currentChapter?currentChapter:lastCourse.chapter_name}}</text>
+      </view>
+    </view>
+    <view  wx:else class="item">
+      <view class="right" catchtap="">
+        <text class="h1">暂无最近练习课程</text>
+        <text class="p">暂无最近练习章节</text>
+      </view>
+    </view>
+
+  </view>
+
+
+  <swiper indicator-dots="{{indicatorDots}}"
+            autoplay="{{autoplay}}" interval="{{interval}}"  duration="{{duration}}" bindchange="onSwiperChange">
+            <block wx:for="{{lastCourse.chapters}}" wx:key="index">
+                <swiper-item>
+                     <image mode="scaleToFill"  src="{{item.image_name?imageUrl+'/'+item.course_code+'/'+item.code+'/'+item.image_name:''}}" />
+                </swiper-item>
+            </block>
+  </swiper>
+
+</scroll-view>
+</view>
+</view>

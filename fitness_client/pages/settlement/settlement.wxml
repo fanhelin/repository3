@@ -1,0 +1,53 @@
+
+<block wx:if="{{needRcv}}">
+<view class="header" wx:if="{{(defaultRcvInfo == null || defaultRcvInfo == '')}}" class="toAddress" bindtap="toAddress" >
+    <view class="item addto" bindtap="addrss">
+        <image src="../../res/images/add.png"/>
+        <text class="lable">添加新地址</text>
+        <text class="jump">〉</text>
+    </view>
+</view>
+<view class="header" wx:else>
+      <view class="distribution">配送信息</view>
+      <view class="address" bindtap="toAddress" >
+        <view class="user">
+            <text >收货人：</text>
+            <text class="name">{{defaultRcvInfo.name}}</text>
+            <text class="tel">{{defaultRcvInfo.mobile}}</text>
+        </view>
+        <view class="ress">
+          <text>地址：</text>
+          <text> {{defaultRcvInfo.address}}</text>
+        </view>
+      </view>
+      <view class="xian xian2"></view>
+</view>
+</block>
+
+<view class="box">
+  <text class="title">订单清单</text>
+  <view class="list">
+    <block wx:for="{{allCmds}}" wx:key="key">
+      <view class="item">
+        <image class="left" src="{{item.main_pic}}"/>
+        <text class="sum">(x{{item.buycount}})</text>
+        <text class="content">{{item.title}}</text>
+        <text class="right">¥{{item.pay}}</text>
+      </view>
+    </block>
+    <view class="fot">
+      <text class="left">实际支付</text>
+      <text class="right">¥{{sumPrice}}</text>
+    </view>
+  </view>
+</view>
+
+<view class="footer">
+  <view class="left">
+    <text class="p">总价:</text>
+    <text class="span">¥{{sumPrice}}</text>
+  </view>
+  <view class="right">
+    <button bindtap="settlement">支付</button>
+  </view>
+</view>

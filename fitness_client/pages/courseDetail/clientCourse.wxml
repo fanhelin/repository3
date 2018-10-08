@@ -1,0 +1,46 @@
+<view class="container">
+  <scroll-view  scroll-y="true"  class="page-body">
+  <!--list-->
+    <view class="nav_section">
+      <view wx:if="{{ courseList && courseList.length>0}}">
+        <block wx:for="{{courseList}}" wx:key="index">
+            <view class="nav_section_items" bindtap="courseDetail" data-code="{{item.code}}"  data-index="{{index}}">
+                <!--image-->
+                <view class="section_image">
+                  <block wx:if="{{item.image_name}}">
+                    <image src="{{imge_url+item.code+'/'+item.image_name}}" mode="aspectFill"></image>
+                  </block>
+                <block wx:else>
+                    <image src="../../res/images/dingdan.png" mode="aspectFill"></image>
+                </block>
+                </view>
+                <!--content-->
+                <view class="section_cont">
+                    <view class="section_cont_sub">
+                        <text>{{item.name}}</text>
+                    </view>
+                    <view class="section_cont_price">总章节数:{{item.total_chapter}} 当前章节:{{item.sequence}}</view>
+                    <view wx:if="{{item.total_chapter<item.sequence}}" stype="margin-top:20rpx;">
+                    <block>
+                    <image style="width: 15px; height: 15px;margin-top:5rpx" src="../../res/images/question.gif" mode="aspectFit"></image>
+                    </block>
+                    该课程已完成练习</view>
+                    <view wx:else stype="margin-top:20rpx;">{{item.trucLast_date}}</view>
+                </view>
+                <!--book-->
+                <view wx:if="{{item.total_chapter<item.sequence}}" class="section_book_s" data-name="{{item.name}}" data-code="{{item.code}}" data-seq="{{item.sequence}}" catchtap="goPractice_agin">
+                        <text>重新开始</text>
+                </view>
+                <view wx:else class="section_book" data-name="{{item.name}}" data-code="{{item.code}}" data-seq="{{item.sequence}}" catchtap="goPractice">
+                        <text>去练习</text>
+                </view>
+            </view>
+          </block>
+      </view>
+       <view wx:else class="wuge">
+              暂无数据
+       </view>
+   
+    </view>
+  </scroll-view>
+</view>

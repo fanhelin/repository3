@@ -1,0 +1,32 @@
+<!--pages/sign/sign.wxml-->
+<view class="main">
+  <view class="title">
+    <view style="float:left">
+      <block>
+        <image style="width: 46px; height: 46px;margin:0 auto" src="../../res/images/vv.jpg" mode="aspectFill"></image>
+      </block>
+    </view>
+    <view style="padding-top:35rpx;">
+      <text>签到并上传练习照片即可换取积分！</text>
+    </view>
+  </view>
+  <view class="ar_line"></view>
+  <view class='contant'>
+    <view class='contant-img'>
+       <image src="{{filePath}}"></image>
+    </view>
+    <view class='text'>注意：文件大小不超过3M</view>
+    <view class='text'>{{uploadProgress}}</view>
+    <view style='padding-bottom:20rpx;'>
+       <button class='upload-button' bindtap='onSelectFile'>点击选择文件</button>
+    </view>
+  </view>
+
+
+<view class='footer'>
+    <view class='footer-button'>
+        <button class='Button' bindtap="goBack">取消</button>
+        <button class='Button' bindtap='onUploadFile' disabled='{{!choosedImag}}'>签 到</button>
+    </view>
+</view>
+</view>

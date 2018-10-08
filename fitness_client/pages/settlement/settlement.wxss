@@ -1,0 +1,223 @@
+/* pages/settlement/settlement.wxss */
+
+.header{
+  overflow: hidden;
+  position: relative;
+  background: #fff;
+}
+.header .address{
+  padding:15px 0;
+}
+.header .user{
+  padding:0 15px;
+  font-size: 26rpx;
+  color:#666;
+}
+.header .user:after{
+  content: "";
+  display: block;
+  clear: both;
+}
+.header .user .nameLable{
+  float:left;
+  font-size: 26rpx;
+}
+.header .user .name{
+  font-size: 26rpx;
+}
+.header .user .tel{
+  font-size: 26rpx;
+  float: right;
+}
+.header .ress{
+  padding:10px 15px 0 15px;
+  font-size:26rpx;
+  color:#666;
+}
+.header .distribution{
+  font-size:26rpx;
+  background:#F0F0F0;
+  padding:8px 15px;
+  width:100%;
+  color: #9e9e9e;
+  margin-top:7px;
+}
+.xian{
+  border-bottom:2px dashed #ff533b;
+  position: absolute;
+  width:100%;
+  bottom: 0;
+  left:0;
+}
+.xian2{
+  background: #fff;
+}
+.toAddress{
+    color: 9e9e9e;
+    background: #fff;
+    font-size: 18px;
+    padding: 15px;
+}
+.box{
+    margin-top:7px;
+}
+.box .title{
+  font-size: 26rpx;
+  color: #9e9e9e;
+  padding:8px 15px;
+  background:#fff;
+  width:100%;
+  display:block;
+  border-bottom:1px solid #eee;
+}
+
+.box .imgtu{
+  margin-top:5px;
+  padding:3px 15px;
+  background: #fff;
+  border-top:1px solid #eee;
+  border-bottom:1px solid #eee;
+  height: 30px;
+}
+
+.box .imgtu image{
+  width:30px;
+  height: 28px;
+  float: left;
+}
+.box .imgtu text{
+  line-height: 30px;
+  font-size: 26rpx;
+  float: left;
+  padding-left:10px;
+  color: #999;
+}
+.box .list .item{
+  font-size: 26rpx;
+  line-height: 20px;
+  color: #666;
+  margin-top:10px;
+  padding:10px 15px;
+  background:#F0F0F0;
+}
+.box .item:after{
+  content: "";
+  display: block;
+  clear: both;
+}
+.box .item .content{
+  width:55%;
+  margin:10px 10px 0px 10rpx;
+  display:inline-block;
+}
+
+.box .item .sum{
+  color:  #F5B223 ;
+  font-size:30rpx;
+  line-height:102px;
+}
+
+.box .item .left{
+  float: left;
+  width:25%;
+  text-align:center;
+  height:80px;
+  line-height:80px;
+  border:1px solid #ddd;
+}
+.box .item .right{
+  float: right;
+  color:#ff533b;
+}
+.box .fot{
+  font-size: 26rpx;
+  color: #333;
+  border-bottom:1px solid #eee;
+  background:#fff;
+  padding:10px 15px;
+  display:block;
+}
+.box .fot .left{
+  float: left;
+  color:#666;
+  margin-left:70%;
+}
+.box .fot .right{
+  float: right;
+  color:#ff533b;
+}
+.box .fot:after{
+  content: "";
+  display: block;
+  clear: both;
+}
+.number {
+  width:110px;
+  height: 50px;
+  position: absolute;
+  right:0;
+  top:25px;
+}
+.number:after{
+  content:"";
+  display: block;
+  clear: both;
+}
+.number .plus{
+  width:30px;
+  height: 30px;
+  line-height: 35px;
+  text-align: center;
+  color:#fff;
+  background: #ff533b;
+  border-radius: 50%;
+  font-size: 20px;
+  float: left;
+  margin-top:10px;
+}
+.number .sum{
+  float: left;
+  width:40px;
+  line-height: 50px;
+  font-size: 30rpx;
+  text-align: center;
+}
+.number .jiax{
+  margin-right:15px;
+}
+
+.footer{
+  background: #fff;
+  position: fixed;
+  border-top:1px solid #eee;
+  left:0;
+  right:0;
+  bottom: 0;
+  height: 40px;
+}
+.footer .right{
+  float: right;
+}
+.footer .left{
+  float: left;
+}
+.footer .left {
+  line-height: 40px;
+  font-size: 30rpx;
+  padding-left:15px;
+  color:#666;
+}
+.footer .left .span {
+  color:#ff533b;
+  padding-left:5px;
+}
+.footer .right button{
+  height: 40px;
+  line-height:40px;
+  background:#339966;
+  border:none;
+  border-radius: 0;
+  color:#fff;
+  padding:0 40px;
+  font-size:30rpx;
+}

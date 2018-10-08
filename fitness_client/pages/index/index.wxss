@@ -1,0 +1,149 @@
+/**index.wxss**/
+.row-list{
+  width: 100%;
+  display: flex;
+  flex-direction:row; 
+  flex-wrap: nowrap;
+  margin-top: 12px;
+  font-size: 14px;
+  color: #333333;
+  border-bottom: 1px solid #e9e9e9;
+  position:fixed;
+  top:400rpx;
+}
+
+.list {
+  background: #fff;
+  margin:0px;
+}
+.list .item{
+  padding:10px 10px;
+  font-size: 14px;
+  color:#333;
+  position: relative;
+  display: flex;
+  flex-direction:row;
+  border-bottom: 1px solid #f3f3f3;
+}
+.item::last-child{
+  border:none;
+}
+.item radio{
+  padding: 15rpx 25rpx 0 10rpx;
+}
+.item .right{
+  flex: 1;
+}
+.item image {
+  width:32rpx;
+  height: 32rpx;
+  display: inline-block;
+  vertical-align:middle;
+  margin:0 18rpx 0 9rpx;
+}
+.item .jump{
+  position: absolute;
+  right:20px;
+  top:20px;
+  color:#999;
+}
+.addto .jump{
+  top:10px;
+}
+.item .h1,.list .item .p{
+  display: block;
+  color:#ccc;
+  font-size: 12px;
+}
+.item .h1{
+  margin-bottom:5px;
+  color:#666;
+  font-size: 14px;
+}
+
+.slide-image{
+  width:100px ;
+  
+}
+
+/* pages/mystudy/mystudy.wxss */
+.pageContainer{
+    height: 1140rpx;
+    position: relative;
+}
+.logo{
+    height: 40rpx;
+    width:750rpx;
+    z-index: 10;
+    padding-top:20rpx;
+    color: #FFF;
+    margin:0 auto;
+    text-align:center;
+}
+
+/*header*/
+.flex{
+  display: flex;
+}
+.header{
+    height: 400rpx;
+    background-color: #2cc17B;
+    position:fixed;
+}
+.header image{
+    position: absolute;
+    left:50%;
+    top:50%;
+    margin:-80rpx 0 0 -80rpx;
+    width:160rpx;
+    height: 160rpx;
+    border-radius:50%;
+}
+.styState{
+    width:750rpx;
+    position: absolute;
+    bottom:20rpx;
+    justify-content: space-around;
+}
+.styState view{
+    width:320rpx;
+    font-size: 20rpx;
+    color: #FFF;
+}
+.styState text{
+    font-size: 1em;
+    display: block;
+    text-align: center;
+}
+#bg-font{
+    display: inline-block;
+    font-size: 2em;
+}
+.styState view:nth-child(2){
+    width:5rpx;
+    background-color: rgba(255,255,255,0.4);
+}
+
+.styState view:nth-child(4){
+    width:5rpx;
+    background-color: rgba(255,255,255,0.4);
+}
+.styState view:nth-child(6){
+    width:5rpx;
+    background-color: rgba(255,255,255,0.4);
+}
+
+swiper{
+    height: 500rpx;
+}
+swiper-item image{
+  width:100%;
+  height: 500rpx;
+}
+
+.mycourse{
+  position: absolute;
+  top:570rpx;
+  width:100%;
+  height:auto;
+}

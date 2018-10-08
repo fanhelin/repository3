@@ -1,0 +1,33 @@
+<!--pages/mall/mall.wxml-->
+
+<view class="pageContainer  bgC">
+  <!--search-->
+  <import src="/wxSearch/wxSearch.wxml"/>
+  <view class="search flex">
+    <view class="search-left">
+      <image src="../../res/images/search.png"></image>
+      <input bindinput="wxSearchInput" bindfocus="wxSerchFocus" placeholder="搜索" value="{{wxSearchData.value}}" bindblur="wxSearchFn"  placeholder-class="search-placeholder"/>
+    </view>
+    <view class="search-right flex-item" bindtap="wxSearchFn">
+      <image src="../../res/images/email.png"></image>
+    </view>
+  </view>
+  <template is="wxSearch" data="{{wxSearchData}}"/>
+
+  <view class="course-grp flex" >
+    <block>
+      <!-- <view class="course-grp-name flex">
+        <text>视频列表</text>
+        <navigator url="">>></navigator>
+      </view> -->
+      <scroll-view scroll-Y="true" scroll-X="false" class="course-grp-item" style="height:{{scrollHeight}}px;">
+        <navigator wx:for="{{courses}}" wx:key="index" url="" bindtap="todetail" id="{{item.code}}" class="flex flex-col" data-code="{{item.code}}">
+            <image src="{{imageUrl}}{{item.code}}/{{item.image_name}}" mode="aspectFill"></image>
+            <text>{{item.name}}</text>
+            <text>￥{{item.price}}</text>
+        </navigator>
+      </scroll-view>
+    </block>
+  </view>
+
+</view>

@@ -1,0 +1,67 @@
+<!--pages/exchange/goodsDetail.wxml-->
+<view>
+        <swiper class="swiper" indicator-dots="{{indicatorDots}}"
+            autoplay="{{autoplay}}" interval="{{interval}}"  duration="{{duration}}" >
+           
+                <swiper-item>
+                    <image mode="scaleToFill" src="{{ goods.main_img? (imageUrl + goods.main_img) : ''}}" />
+                </swiper-item>
+
+               <swiper-item>
+                    <image mode="scaleToFill" src="{{goods.fu_img ? (imageUrl + goods.fu_img) : ''}}" />
+                </swiper-item>
+        
+        </swiper>
+
+      <view class="ar_cont">
+          <text class="ar_cont_h1">{{goods.title}}</text>
+           <view class="ar_line"></view>
+          <text class="ar_cont_price">需要积分：{{goods.score}}</text>
+             <view class="ar_line"></view>
+          <text class="ar_cont_price">可用积分：{{score}}</text>
+          <view class="ar_line"></view>
+            <text >库存：{{goods.sum}} {{goods.unit}}</text> 
+          <view class="ar_line"></view>
+            <text>{{goods.des}}</text>
+          <view class="ar_line"></view>
+      </view>
+
+
+      
+<view class="footer">
+      <view class="item bt">
+        <button formType="submit" class="btn" disabled="{{ goods.sum<0 || (goods.score > score) }}" bindtap='goExchange'>马上兑换</button>
+    </view>
+</view> 
+</view>
+
+
+<modal title='兑换积分' hidden="{{hideWin}}" bindcancel="onWinCancel" bindconfirm="onWinWinOk" cancelText="取 消" confirmText="确 定">  
+ <block wx:if="{{needRcv}}">
+   <view wx:if="{{(defaultRcvInfo == null || defaultRcvInfo == '')}}" class="toAddress" bindtap="toAddress" >
+      <view class="item addto" bindtap="addrss">
+        <image src="../../res/images/add.png"/>
+        <text class="lable">添加新地址</text>
+
+    </view>
+   </view>
+<view class="list" wx:else>
+      <view class="address" bindtap="toAddress" >
+        <view class="user">
+            <text >收货人：</text>
+            <text class="name">{{defaultRcvInfo.name}}</text>
+        </view>
+          <view class="user">
+            <text >电话：</text>
+            <text class="tel">{{defaultRcvInfo.mobile}}</text>
+        </view>
+        <view class="ress">
+          <text>地址：</text>
+          <text> {{defaultRcvInfo.address}}</text>
+        </view>
+      </view>
+      <view class="ar_line"></view>
+      <view>扣除积分：{{goods.score}}</view>
+</view>
+</block>
+</modal> 

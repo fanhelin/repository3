@@ -1,0 +1,66 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/me/me",
+    "pages/mall/mall",
+    "pages/order/index",
+    "pages/userdata/index",
+    "pages/courseDetail/courseDetail",
+    "pages/regist/regist",
+    "pages/practice/practice",
+    "pages/shoppingcar/shoppingcar",
+    "pages/settlement/settlement",
+    "pages/address/address",
+    "pages/address/addto/addto",
+    "pages/courseDetail/clientCourse",
+    "pages/courseDetail/clientCourseDetail",
+    "pages/practice/doPractice",
+    "pages/goods/goodsDetail",
+    "pages/exchange/comOrderList",
+    "pages/exchange/exchangeDetail",
+    "pages/sign/sign",
+    "pages/test/videoTest"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#47a86c",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "瑜伽视频网",
+    "backgroundColor": "#fff",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "res/images/iconfont-car.png",
+        "selectedIconPath": "res/images/iconfont-car-active.png"
+      },
+      {
+        "pagePath": "pages/mall/mall",
+        "iconPath": "res/images/iconfont-shopping.png",
+        "selectedIconPath": "res/images/iconfont-shopping-active.png",
+        "text": "视频商城"
+      },
+      {
+        "pagePath": "pages/shoppingcar/shoppingcar",
+        "text": "购物车",
+        "iconPath": "res/images/gouwuche.png",
+        "selectedIconPath": "res/images/gouwuche_s.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "iconPath": "res/images/iconfont-my.png",
+        "selectedIconPath": "res/images/iconfont-my-active.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 30000,
+    "downloadFile": 30000
+  },
+  "debug": true
+}
